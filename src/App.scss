@@ -3,7 +3,20 @@
 
 // font-family: 'Fraunces', serif;    700 900
 
+h1,
+a,
+h2,
+h3 {
+  font-family: "Fraunces", serif;
+  text-align: center;
+}
+
 // font-family: 'Barlow', sans-serif;    600
+
+p {
+  font-family: "Barlow", sans-serif;
+  text-align: center;
+}
 
 // ## Colors
 
@@ -33,14 +46,43 @@ $White: hsl(0, 0%, 100%);
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 #check {
   display: none;
 
   &:checked ~ .container > .menu__container {
-    opacity: 0;
+    opacity: 1;
+    visibility: visible;
   }
+}
+
+label {
+  transition: all 0.2s ease-in-out;
+}
+
+#toggle {
+  transform: rotate(-90deg);
+  margin-right: 2rem;
+}
+
+#active {
+  padding: 1.5rem 3rem;
+  background: #fbd601;
+  border-radius: 3rem;
+  text-transform: uppercase;
+  a {
+    color: black;
+    font-family: "Fraunces", serif;
+    font-size: 1.5rem;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.flex {
+  display: flex;
 }
 
 .container {
@@ -54,9 +96,11 @@ html {
     left: 2rem;
     right: 2rem;
     display: block;
-    visibility: visible;
-    opacity: 1;
-    transition: all 0.2s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s;
+    z-index: 1;
+    height: 30rem;
 
     &::before {
       content: "";
@@ -73,9 +117,23 @@ html {
       list-style: none;
       background-color: $White;
       display: block;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: #fffbf8;
+
+      li {
+        margin-top: -3rem;
+        transition: all 0.2s;
+      }
 
       a {
         text-decoration: none;
+        font-family: "Barlow", sans-serif;
+        font-size: 1.85rem;
+        color: $Dark-grayish-blue;
       }
     }
   }
@@ -95,12 +153,13 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-
+  justify-content: flex-start;
+  overflow: hidden;
   text-align: center;
+  background: center / cover no-repeat url(./images/mobile/image-header.jpg);
 
   &__img {
-    width: 100%;
+    width: 100vw;
     position: absolute;
     top: 0;
     left: 0;
@@ -114,8 +173,9 @@ img {
 
   .menu {
     margin: 3.2rem 2.2rem 0 0;
-    transform: scale(0.96);
+    transform: scale(0.96) skew(0);
     opacity: 0.8;
+    transition: all 0.2s;
   }
 
   &__upper {
@@ -150,4 +210,128 @@ img {
       justify-self: end;
     }
   }
+}
+
+.grid__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+
+  .grid__item {
+    .flex {
+      flex-direction: column;
+
+      img {
+      }
+
+      div {
+        background-color: #fffbf8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 900;
+        font-size: 3rem;
+        width: 80%;
+        margin: 6rem auto 0 auto;
+      }
+
+      p {
+        font-size: 1.75rem;
+        width: 87%;
+        color: $Dark-grayish-blue;
+        line-height: 1.6em;
+        margin-top: 2.5rem;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: black;
+        text-transform: uppercase;
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+        font-weight: 900;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 60%;
+          left: -10%;
+          z-index: -1;
+          display: block;
+          width: 120%;
+          height: 1rem;
+          background-color: rgba($Yellow, 0.25);
+          border-radius: 0.5rem;
+        }
+
+        &:nth-of-type(1)[href="#"]::after {
+          background-color: rgba($Soft-red, 0.25);
+        }
+      }
+    }
+
+    &:nth-of-type(3) {
+      background: no-repeat url(./images/mobile/image-graphic-design.jpg);
+    }
+    &:nth-of-type(4) {
+      background: no-repeat url(./images/mobile/image-photography.jpg);
+      color: $Soft-red;
+      margin-top: -14rem;
+    }
+
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-size: contain;
+
+      h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 900;
+        font-size: 2.65rem;
+        width: 80%;
+        margin: 18rem auto 0 auto;
+        color: $Dark-desaturated-cyan;
+
+        &:nth-of-type(1)[class="h3"] {
+          color: $Dark-blue;
+        }
+      }
+
+      p {
+        font-size: 1.55rem;
+        width: 90%;
+        color: $Dark-grayish-blue;
+        line-height: 1.6em;
+        margin: 0 auto;
+        margin-top: 2.5rem;
+        color: $Dark-desaturated-cyan;
+
+        &:nth-of-type(1)[class="p"] {
+          margin-bottom: 11.5rem;
+          color: $Dark-blue;
+        }
+      }
+    }
+  }
+}
+
+.clients {
+  margin-top: -21rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap");
+h1,
+a,
+h2,
+h3 {
+  font-family: "Fraunces", serif;
+  text-align: center;
+}
+
+p {
+  font-family: "Barlow", sans-serif;
+  text-align: center;
+}
+
 *,
 *::after,
 *::before {
@@ -11,6 +24,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 #check {
@@ -18,7 +32,40 @@ html {
 }
 
 #check:checked ~ .container > .menu__container {
-  opacity: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+label {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#toggle {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  margin-right: 2rem;
+}
+
+#active {
+  padding: 1.5rem 3rem;
+  background: #fbd601;
+  border-radius: 3rem;
+  text-transform: uppercase;
+}
+
+#active a {
+  color: black;
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .container {
@@ -33,10 +80,12 @@ html {
   left: 2rem;
   right: 2rem;
   display: block;
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  z-index: 1;
+  height: 30rem;
 }
 
 .container .menu__container::before {
@@ -55,10 +104,34 @@ html {
   list-style: none;
   background-color: white;
   display: block;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fffbf8;
+}
+
+.container .menu__container .menu__content li {
+  margin-top: -3rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .container .menu__container .menu__content a {
   text-decoration: none;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.85rem;
+  color: #818498;
 }
 
 .content {
@@ -82,12 +155,14 @@ img {
           flex-direction: column;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
+  overflow: hidden;
   text-align: center;
+  background: center/cover no-repeat url(./images/mobile/image-header.jpg);
 }
 
 .header__img {
-  width: 100%;
+  width: 100vw;
   position: absolute;
   top: 0;
   left: 0;
@@ -102,9 +177,11 @@ img {
 
 .header .menu {
   margin: 3.2rem 2.2rem 0 0;
-  -webkit-transform: scale(0.96);
-          transform: scale(0.96);
+  -webkit-transform: scale(0.96) skew(0);
+          transform: scale(0.96) skew(0);
   opacity: 0.8;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .header__upper {
@@ -153,5 +230,152 @@ img {
 .header__lower .arrow {
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+.grid__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.grid__container .grid__item .flex {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.grid__container .grid__item .flex div {
+  background-color: #fffbf8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid__container .grid__item .flex h3 {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 3rem;
+  width: 80%;
+  margin: 6rem auto 0 auto;
+}
+
+.grid__container .grid__item .flex p {
+  font-size: 1.75rem;
+  width: 87%;
+  color: #818498;
+  line-height: 1.6em;
+  margin-top: 2.5rem;
+}
+
+.grid__container .grid__item .flex a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: black;
+  text-transform: uppercase;
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  font-weight: 900;
+  position: relative;
+  z-index: 1;
+}
+
+.grid__container .grid__item .flex a::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: -10%;
+  z-index: -1;
+  display: block;
+  width: 120%;
+  height: 1rem;
+  background-color: rgba(250, 212, 0, 0.25);
+  border-radius: 0.5rem;
+}
+
+.grid__container .grid__item .flex a:nth-of-type(1)[href="#"]::after {
+  background-color: rgba(254, 120, 103, 0.25);
+}
+
+.grid__container .grid__item:nth-of-type(3) {
+  background: no-repeat url(./images/mobile/image-graphic-design.jpg);
+}
+
+.grid__container .grid__item:nth-of-type(4) {
+  background: no-repeat url(./images/mobile/image-photography.jpg);
+  color: #fe7867;
+  margin-top: -14rem;
+}
+
+.grid__container .grid__item:nth-of-type(3), .grid__container .grid__item:nth-of-type(4) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-size: contain;
+}
+
+.grid__container .grid__item:nth-of-type(3) h3, .grid__container .grid__item:nth-of-type(4) h3 {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 2.65rem;
+  width: 80%;
+  margin: 18rem auto 0 auto;
+  color: #25564b;
+}
+
+.grid__container .grid__item:nth-of-type(3) h3:nth-of-type(1)[class="h3"], .grid__container .grid__item:nth-of-type(4) h3:nth-of-type(1)[class="h3"] {
+  color: #19536b;
+}
+
+.grid__container .grid__item:nth-of-type(3) p, .grid__container .grid__item:nth-of-type(4) p {
+  font-size: 1.55rem;
+  width: 90%;
+  color: #818498;
+  line-height: 1.6em;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+  color: #25564b;
+}
+
+.grid__container .grid__item:nth-of-type(3) p:nth-of-type(1)[class="p"], .grid__container .grid__item:nth-of-type(4) p:nth-of-type(1)[class="p"] {
+  margin-bottom: 11.5rem;
+  color: #19536b;
+}
+
+.clients {
+  margin-top: -21rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=App.css.map */
