@@ -366,7 +366,7 @@ img {
 }
 
 .clients {
-  margin-top: -21rem;
+  margin-top: -27rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,5 +377,143 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #fffbf8;
+}
+
+.clients__heading {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  color: #a7abae;
+  margin-top: 6rem;
+  font-weight: 900;
+}
+
+.clients__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 6rem;
+}
+
+.clients__card:nth-last-of-type(1) {
+  margin-bottom: 9rem;
+}
+
+.clients__card img {
+  border-radius: 50%;
+  width: 19%;
+}
+
+.clients__card__text {
+  font-size: 1.8rem;
+  color: #5a636c;
+  letter-spacing: -0.5px;
+  margin-top: 3rem;
+  width: 87%;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+}
+
+.clients__card__name {
+  font-size: 1.8rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.clients__card__name span {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.35rem;
+  color: #a7abae;
+  letter-spacing: initial;
+}
+
+.images {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+.footer {
+  background-color: #90d4c5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 33.3rem;
+}
+
+.footer .footer__container {
+  height: 100%;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .footer__container svg {
+  -webkit-transform: scale(1.35);
+          transform: scale(1.35);
+  margin-top: -2rem;
+}
+
+.footer .footer__container .footer__links {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-top: -4rem;
+}
+
+.footer .footer__container .footer__links a {
+  text-decoration: none;
+  color: #36927c;
+  font-size: 1.75rem;
+  font-family: "Barlow", sans-serif;
+}
+
+.footer .footer__container .footer__social__links {
+  width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=App.css.map */
