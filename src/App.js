@@ -7,7 +7,7 @@ import Clients from "./components/Clients";
 import Footer from "./components/Footer";
 
 function App() {
-  const [state, setstate] = useState("a");
+  const [state, setstate] = useState("d");
 
   return (
     <>

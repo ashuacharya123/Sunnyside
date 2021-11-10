@@ -9,15 +9,23 @@ import img1 from "../images/mobile/image-gallery-milkbottles.jpg";
 import img2 from "../images/mobile/image-gallery-orange.jpg";
 import img3 from "../images/mobile/image-gallery-cone.jpg";
 import img4 from "../images/mobile/image-gallery-sugar-cubes.jpg";
+import img1d from "../images/desktop/image-gallery-milkbottles.jpg";
+import img2d from "../images/desktop/image-gallery-orange.jpg";
+import img3d from "../images/desktop/image-gallery-cone.jpg";
+import img4d from "../images/desktop/image-gallery-sugarcubes.jpg";
 
 const Footer = () => {
   return (
     <>
       <div className="images">
-        <img src={img1} alt="pic" />
-        <img src={img2} alt="pic" />
-        <img src={img3} alt="pic" />
-        <img src={img4} alt="pic" />
+        <img className="mobile" src={img1} alt="pic" />
+        <img className="mobile" src={img2} alt="pic" />
+        <img className="mobile" src={img3} alt="pic" />
+        <img className="mobile" src={img4} alt="pic" />
+        <img src={img1d} alt="pic" />
+        <img src={img2d} alt="pic" />
+        <img src={img3d} alt="pic" />
+        <img src={img4d} alt="pic" />
       </div>
 
       <section className="footer">
