@@ -486,7 +486,7 @@ img {
 
 .clients__card img {
   border-radius: 50%;
-  width: 9%;
+  width: 20%;
 }
 
 .clients__card__text {
@@ -605,6 +605,10 @@ img {
 .footer .footer__container .footer__social__links img:hover {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
+}
+
+.pc {
+  display: none;
 }
 
 @media screen and (max-width: 280px) {

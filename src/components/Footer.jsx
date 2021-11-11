@@ -22,10 +22,10 @@ const Footer = () => {
         <img className="mobile" src={img2} alt="pic" />
         <img className="mobile" src={img3} alt="pic" />
         <img className="mobile" src={img4} alt="pic" />
-        <img src={img1d} alt="pic" />
-        <img src={img2d} alt="pic" />
-        <img src={img3d} alt="pic" />
-        <img src={img4d} alt="pic" />
+        <img className="pc" src={img1d} alt="pic" />
+        <img className="pc" src={img2d} alt="pic" />
+        <img className="pc" src={img3d} alt="pic" />
+        <img className="pc" src={img4d} alt="pic" />
       </div>
 
       <section className="footer">
