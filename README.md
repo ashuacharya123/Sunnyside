@@ -1,2 +1,2 @@
 Sunnyside agency landing page
-(./desktop-preview.jpg)
+!(./desktop-preview.jpg)
