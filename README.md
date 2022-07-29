@@ -1,2 +1,3 @@
 Sunnyside agency landing page
-!(./desktop-preview.jpg)
+![Design preview for the Sunnyside agency landing page coding challenge](./desktop-preview.jpg)
+
